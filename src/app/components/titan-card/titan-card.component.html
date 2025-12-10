@@ -1,0 +1,47 @@
+<mat-card class="titan-card">
+  <div class="card-header" [style.backgroundImage]="'url(' + titan.img + ')'">
+    <div class="overlay"></div>
+    <div class="header-content">
+      <mat-card-title>{{ titan.name }}</mat-card-title>
+      <mat-card-subtitle class="subtitle">{{ titan.height }}</mat-card-subtitle>
+    </div>
+  </div>
+  
+  <mat-card-content class="content-area">
+    <p class="description">{{ titan.description }}</p>
+    
+    <div class="metrics-container">
+      <div class="metric">
+        <div class="label">
+          <span>FORÇA</span>
+          <span class="value">{{ titan.metrics.strength }}%</span>
+        </div>
+        <mat-progress-bar mode="determinate" color="warn" [value]="titan.metrics.strength"></mat-progress-bar>
+      </div>
+
+      <div class="metric">
+        <div class="label">
+          <span>VELOCIDADE</span>
+          <span class="value">{{ titan.metrics.speed }}%</span>
+        </div>
+        <mat-progress-bar mode="determinate" color="accent" [value]="titan.metrics.speed"></mat-progress-bar>
+      </div>
+
+      <div class="metric">
+        <div class="label">
+          <span>TAMANHO</span>
+          <span class="value">{{ titan.metrics.size }}%</span>
+        </div>
+        <mat-progress-bar mode="determinate" [value]="titan.metrics.size"></mat-progress-bar>
+      </div>
+    </div>
+
+    <div class="abilities-list" *ngIf="titan.abilities && titan.abilities.length > 0">
+        <h4>Habilidades</h4>
+        <mat-chip-set>
+          <mat-chip *ngFor="let ability of titan.abilities.slice(0,3)">{{ ability }}</mat-chip>
+        </mat-chip-set>
+    </div>
+  </mat-card-content>
+</mat-card>
+

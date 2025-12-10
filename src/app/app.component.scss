@@ -1,0 +1,147 @@
+.aot-toolbar {
+  background: #2e3b28 !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border-bottom: 2px solid #4a5d41;
+}
+
+.logo-text {
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: 'Impact', sans-serif;
+}
+
+.spacer { flex: 1 1 auto; }
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.intro-section {
+  text-align: center;
+  padding: 40px 0;
+  color: white;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.subtitle-text {
+  color: #81c784;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.divider {
+  height: 2px;
+  width: 100px;
+  background: #81c784;
+  margin: 20px auto;
+}
+
+.titans-grid-container {
+  padding-top: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.history-container {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  color: #ddd;
+}
+
+.history-content {
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+}
+
+.stats-summary {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.big-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #81c784; /* Verde destaque */
+}
+
+::ng-deep .lore-accordion .mat-expansion-panel {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #333;
+  margin-bottom: 16px;
+}
+
+::ng-deep .lore-accordion .mat-expansion-panel-header-title {
+  color: #81c784 !important; /* Título verde */
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+::ng-deep .lore-accordion .mat-expansion-panel-header-description {
+  color: #aaa !important;
+}
+
+::ng-deep .lore-accordion .mat-expansion-indicator::after {
+  color: #81c784 !important; /* Ícone da seta verde */
+}
+
+.walls-info p {
+  margin-bottom: 8px;
+  border-left: 2px solid #555;
+  padding-left: 10px;
+}
+
+.loading-shade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #81c784;
+}
+
+::ng-deep .mat-mdc-tab-label-container {
+  border-bottom: 1px solid #333;
+}
+::ng-deep .mat-mdc-tab .mdc-tab__text-label {
+  color: #aaa !important;
+}
+::ng-deep .mat-mdc-tab-active .mdc-tab__text-label {
+  color: #81c784 !important;
+}
+::ng-deep .mat-mdc-tab-indicator .mdc-tab-indicator__content--underline {
+  border-color: #81c784 !important;
+}

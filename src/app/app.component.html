@@ -1,0 +1,107 @@
+<div class="main-container">
+  <mat-toolbar color="primary" class="aot-toolbar">
+    <span class="logo-text">SHINGEKI NO KYOJIN</span>
+    <span class="spacer"></span>
+    <button mat-icon-button><mat-icon>share</mat-icon></button>
+  </mat-toolbar>
+
+  <div class="content-wrapper">
+    
+    <div class="intro-section">
+      <h1>Os Nove Titãs</h1>
+      <p class="subtitle-text">Monitoramento de Dados & Inteligência</p>
+      <div class="divider"></div>
+    </div>
+
+    <mat-tab-group animationDuration="500ms" mat-stretch-tabs="false" mat-align-tabs="center">
+      
+      <mat-tab label="REGISTRO DE TITÃS">
+        <div class="titans-grid-container" *ngIf="!loading(); else loader">
+          <div class="grid">
+            <app-titan-card 
+              *ngFor="let t of titans()" 
+              [titan]="t"
+              class="grid-item">
+            </app-titan-card>
+          </div>
+        </div>
+      </mat-tab>
+
+      <mat-tab label="ARQUIVOS HISTÓRICOS">
+        <div class="history-container">
+          <div class="history-content">
+            
+            <div class="stats-summary">
+              <div class="stat-box">
+                <span class="big-number">850</span>
+                <span class="stat-label">Ano Atual</span>
+              </div>
+              <div class="stat-box">
+                <span class="big-number">3</span>
+                <span class="stat-label">Muralhas</span>
+              </div>
+            </div>
+
+            <br>
+
+            <mat-accordion class="lore-accordion" multi>
+              
+              <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    A Origem de Ymir
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Há quase 2.000 anos, Ymir Fritz obteve o poder dos Titãs. Após sua morte, sua alma foi dividida em nove titãs, que fundaram o Império de Eldia. Este registro contém os dados conhecidos atualmente sobre essas nove entidades singulares.</p>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    A Grande Guerra dos Titãs
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Foi o conflito civil que marcou o fim do Império Eldiano. As famílias nobres portadoras dos titãs lutaram entre si, permitindo que Marley, uma nação subjugada, tomasse o controle de 7 dos 9 titãs originais. O Rei Fritz fugiu para a Ilha de Paradis e apagou a memória de seu povo.</p>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    As Três Muralhas
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="walls-info">
+                  <p><strong>Muralha Maria:</strong> A mais externa. Caiu no ano 845 após o ataque do Titã Colossal e Blindado.</p>
+                  <p><strong>Muralha Rose:</strong> A intermediária. Tornou-se a nova fronteira da humanidade após a queda da Maria.</p>
+                  <p><strong>Muralha Sina:</strong> A mais interna e segura, onde reside a nobreza e a Polícia Militar.</p>
+                </div>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Divisões Militares
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p><strong>Tropa de Exploração:</strong> A única divisão que se aventura fora das muralhas em território titã.</p>
+                <p><strong>Guarnição:</strong> Responsável por proteger e manter as Muralhas.</p>
+                <p><strong>Polícia Militar:</strong> Serve ao Rei e mantém a ordem dentro da Muralha Sina.</p>
+              </mat-expansion-panel>
+
+            </mat-accordion>
+
+          </div>
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+
+    <ng-template #loader>
+      <div class="loading-shade">
+        <mat-spinner diameter="50" color="accent"></mat-spinner>
+        <p>Acessando Caminhos...</p>
+      </div>
+    </ng-template>
+
+  </div>
+</div>
